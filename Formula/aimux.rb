@@ -5,21 +5,21 @@
 class Aimux < Formula
   desc "TUI dashboard for managing AI coding agent sessions"
   homepage "https://github.com/zanetworker/aimux"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zanetworker/aimux/releases/download/v0.3.0/aimux_0.3.0_darwin_amd64.tar.gz"
-      sha256 "aa28d1f73e73716111f81f85eba06b2d2d753aded92f1a19da51be918d83c206"
+      url "https://github.com/zanetworker/aimux/releases/download/v0.4.0/aimux_0.4.0_darwin_amd64.tar.gz"
+      sha256 "bd51603ff330a36bed54dc4e8278a0a5b61405d89f5d6f99dc867e794804e8c2"
 
       define_method(:install) do
         bin.install "aimux"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zanetworker/aimux/releases/download/v0.3.0/aimux_0.3.0_darwin_arm64.tar.gz"
-      sha256 "2acc0582c2c56f88deb4be63977dc99a6f7408453e28dd475f72f2df358ccb05"
+      url "https://github.com/zanetworker/aimux/releases/download/v0.4.0/aimux_0.4.0_darwin_arm64.tar.gz"
+      sha256 "5a0474fb80fe61275d8de3bbcc0e1f05f9680ce496b972d09955d0ce676e606f"
 
       define_method(:install) do
         bin.install "aimux"
@@ -29,15 +29,15 @@ class Aimux < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zanetworker/aimux/releases/download/v0.3.0/aimux_0.3.0_linux_amd64.tar.gz"
-      sha256 "06c725561c1a924f1f48b7d3d8811739f4a6c520a6ee69be10ba52b0cc6caf49"
+      url "https://github.com/zanetworker/aimux/releases/download/v0.4.0/aimux_0.4.0_linux_amd64.tar.gz"
+      sha256 "8412b56269a417a68541855553d1280d39f3d004eecc387072574a51b67e9e53"
       define_method(:install) do
         bin.install "aimux"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zanetworker/aimux/releases/download/v0.3.0/aimux_0.3.0_linux_arm64.tar.gz"
-      sha256 "c53d0182d6411ba74ef70893a5f520ed055bd8264533919ea4f12d37d5d17c69"
+      url "https://github.com/zanetworker/aimux/releases/download/v0.4.0/aimux_0.4.0_linux_arm64.tar.gz"
+      sha256 "2cf331c670c22cf1aaa3958216b6fa641f8f47427abb9a3b918cec6c3f1217a7"
       define_method(:install) do
         bin.install "aimux"
       end
@@ -45,6 +45,6 @@ class Aimux < Formula
   end
 
   test do
-    system "#{bin}/aimux", "--help"
+    assert_match "aimux", shell_output("#{bin}/aimux --version")
   end
 end
