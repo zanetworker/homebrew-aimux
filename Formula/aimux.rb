@@ -11,7 +11,7 @@ class Aimux < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/zanetworker/aimux/releases/download/v0.9.0/aimux_0.9.0_darwin_amd64.tar.gz"
-      sha256 "72cc0b9953cb020fb0244caeb81d6b32b3d99727999d2876c2955663ebca43b5"
+      sha256 "91f1e3ccbb8100f0297aec114636dfbb8a5e3489493b58cc03a0a10b41dd416d"
 
       define_method(:install) do
         bin.install "aimux"
@@ -19,7 +19,7 @@ class Aimux < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/zanetworker/aimux/releases/download/v0.9.0/aimux_0.9.0_darwin_arm64.tar.gz"
-      sha256 "01877e1cc1e54808f5f4e69d0f63b425bd7a500cb345e47d3c56c5862cc79427"
+      sha256 "d76efa5a10c717f2d068349d7ccbf8249ddb350cd89afe50e3215f752ceebb32"
 
       define_method(:install) do
         bin.install "aimux"
@@ -30,14 +30,14 @@ class Aimux < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/zanetworker/aimux/releases/download/v0.9.0/aimux_0.9.0_linux_amd64.tar.gz"
-      sha256 "c8390f718ddd8ee19cf009d255872062088436c5a74ed05e0496050d74aed84f"
+      sha256 "f006c7775d66f001b92b89337e46b726bc35072a71f1384b4760fdb426eac2a3"
       define_method(:install) do
         bin.install "aimux"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/zanetworker/aimux/releases/download/v0.9.0/aimux_0.9.0_linux_arm64.tar.gz"
-      sha256 "bf1581f89dc76829989bec2a02eef16e07f64f87e00669c084b4bf2476bda31f"
+      sha256 "97cb215c9800adfc9f41ce1d93d7a6edb2031e4a10a231d5d5c1b92122be0f24"
       define_method(:install) do
         bin.install "aimux"
       end
